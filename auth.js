@@ -57,27 +57,41 @@ function logoutUser() {
 
 function openPopup() 
 {
+    clearForm();
     document.getElementById("popup").style.display = "block";
     document.getElementById("popupsignup").style.display = "none";
 }
 
 function closePopup()
 {
+    clearForm();
     document.getElementById("popup").style.display = "none";
 }
         
 function openPopupsignup() 
 {
+    clearForm();
     document.getElementById("popupsignup").style.display = "block";       
     document.getElementById("popup").style.display = "none";   
 }
         
 function closePopupsignup() 
-{        
+{      
+    clearForm(); 
     document.getElementById("popupsignup").style.display = "none";
     document.getElementById("popup").style.display = "none";          
 }
 
+
+function clearForm() {
+  document.getElementById("signupName").value="";
+document.getElementById("signupUsername").value="";
+ document.getElementById("signupPhone").value="";
+ document.getElementById("signupPassword").value="";
+ document.getElementById("loginUsername").value="";
+document.getElementById("loginPassword").value="";
+document.getElementById("enteredOtp").value="";
+}
 
 
 let generatedOTP = "";
@@ -186,3 +200,4 @@ function showProfile(user) {
     document.getElementById("profilename").innerText = "Name: " + user.name;
     document.getElementById("profileusername").innerText = "User: " + user.username;
 }
+
