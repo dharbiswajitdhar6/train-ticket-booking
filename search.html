@@ -53,8 +53,8 @@
     <div class="popup-bg" id="popup">
   <div class="popup-box">
     <h3>Login</h3>
-    <input type="text" id="loginUsername" placeholder="Username"><br>
-    <input type="password" id="loginPassword" placeholder="Password"><br>
+    <input type="text" id="loginUsername" placeholder="Enter Username"><br>
+    <input type="password" id="loginPassword" placeholder="Enter Password"><br>
     <button id="btnn" onclick="loginUser()">Login</button>
     <button id="btnn" onclick="closePopup()">Close</button><br><br>
     <button id="btnn" onclick="openPopupsignup()">Sign Up</button>
@@ -100,7 +100,8 @@
      <h1 style="color: #1a4d8f; margin-bottom: 15px; font-size: 24px;">Search Train</h1><br><br>
     <form>
   <h2 for="city">Choose your city (From):</h2>
-  <select id="city1" name="city"style="width: 100px;color: #1a4d8f;width: 200px; heigth:30px;border-radius:20px; border:1px solid red;text-align:center">
+  <select id="city1" name="city"style="color:rgb(84, 144, 213);;width: 200px; heigth:30px;border-radius:20px; border:1px solid #1a4d8f;text-align:center;" required>
+    <option selected disabled value="">Select City </option>
     <option value="delhi">Delhi</option>
     <option value="mumbai">Mumbai</option>
     <option value="kolkata">Kolkata</option>
@@ -109,7 +110,8 @@
 
 
    <h2 for="city">Choose your city (To):</h2>
-  <select id="city2" name="city"style="width: 100px;color: #1a4d8f;width: 200px; heigth:30px;border-radius:20px; border:1px solid red;text-align:center">
+  <select id="city2" name="city"style="color:rgb(84, 144, 213);;width: 200px; heigth:30px;border-radius:20px; border:1px solid #1a4d8f;text-align:center" required>
+    <option selected disabled value="">Select City </option>
     <option value="delhi">Delhi</option>
     <option value="mumbai">Mumbai</option>
     <option value="kolkata">Kolkata</option>
@@ -118,7 +120,7 @@
 
   <h2>Select Date of Journey:</h2>
         <input type="date" id="travelDate"
-            style="color:#1a4d8f; width:200px; height:40px; border-radius:20px; border:1px solid #1a4d8f; text-align:center; padding-left:15px;">
+            style="color:rgb(84, 144, 213); width:200px; height:40px; border-radius:20px; border:1px solid #1a4d8f; text-align:center; padding-left:15px;">
         <br><br>
 
 
