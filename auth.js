@@ -1,4 +1,3 @@
-
 function signupUser() 
 {
     const name = document.getElementById("signupName").value;
@@ -19,7 +18,9 @@ function signupUser()
     closePopupsignup();
     openPopup();
 }
-function loginUser() {
+
+function loginUser() 
+{
     const u = document.getElementById("loginUsername").value;
     const p = document.getElementById("loginPassword").value;
 
@@ -30,58 +31,57 @@ function loginUser() {
         return;
     }
 
-    if (stored.username === u && stored.password === p) {
+    if (stored.username === u && stored.password === p) 
+    {
         alert("✅ Login Successful!");
 
         localStorage.setItem("isLoggedIn", "true");
 
         closePopup();
 
-        // REFRESH PAGE AFTER LOGIN
         setTimeout(() => location.reload(), 300);
-    } else {
+    } 
+    else 
+    {
         alert("❌ Wrong username or password!");
     }
 }
 
-// LOGOUT FUNCTION
-function logoutUser() {
+function logoutUser() 
+{
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userData");
 
     alert("Logged out successfully!");
 
-    // REFRESH PAGE
     setTimeout(() => location.reload(), 300);
 }
 
 function openPopup() 
-{
-    clearForm();
+{ 
+    clearForm()
     document.getElementById("popup").style.display = "block";
     document.getElementById("popupsignup").style.display = "none";
+   
 }
 
 function closePopup()
 {
-    clearForm();
     document.getElementById("popup").style.display = "none";
 }
         
 function openPopupsignup() 
 {
-    clearForm();
+    clearForm()
     document.getElementById("popupsignup").style.display = "block";       
     document.getElementById("popup").style.display = "none";   
 }
         
 function closePopupsignup() 
-{      
-    clearForm(); 
+{         clearForm();
     document.getElementById("popupsignup").style.display = "none";
     document.getElementById("popup").style.display = "none";          
 }
-
 
 function clearForm() {
   document.getElementById("signupName").value="";
@@ -92,7 +92,6 @@ document.getElementById("signupUsername").value="";
 document.getElementById("loginPassword").value="";
 document.getElementById("enteredOtp").value="";
 }
-
 
 let generatedOTP = "";
 
@@ -200,4 +199,3 @@ function showProfile(user) {
     document.getElementById("profilename").innerText = "Name: " + user.name;
     document.getElementById("profileusername").innerText = "User: " + user.username;
 }
-
