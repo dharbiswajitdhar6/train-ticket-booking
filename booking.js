@@ -1,3 +1,4 @@
+
 window.addEventListener("DOMContentLoaded", function () {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
 
@@ -34,11 +35,11 @@ function addPassenger() {
 
     div.innerHTML = `
         <h3>Passenger ${passengerCount}</h3>
-        <input type="text" id="name-${passengerCount}" placeholder="Enter Name" required>
-        <input type="number" id="age-${passengerCount}" placeholder="Enter Age" required><br>
+        Name : <input type="text" id="name-${passengerCount}" placeholder="Enter Name" required style="width:300px; border-radius:20px; border:1px solid #1a4d8f;text-align:center;color:#1a4d8f;"><br>
+        Age : <input type="number" id="age-${passengerCount}" placeholder="Enter Age" required style="width:100px; border-radius:20px; border:1px solid #1a4d8f;text-align:center;color:#1a4d8f;"><br>
         <p> Choose your Berth :  
-        <select id="berth-${passengerCount}" name="berth">
-            <option value="sb">Select Berth</option>
+        <select id="berth-${passengerCount}" name="berth" style="color:rgb(84, 144, 213);;width: 200px; height:25px;border-radius:20px; border:1px solid #1a4d8f;text-align:center;" >
+            <option selected disabled>Select Berth</option>
             <option value="Upper">Upper</option>
             <option value="Lower">Lower</option>
             <option value="Middle">Middle</option>
@@ -46,8 +47,8 @@ function addPassenger() {
             <option value="SideLower">SideLower</option>
         </select><br><br></p>
         <p> Gender:  
-            <select id="gender-${passengerCount}" name="gender">
-                <option value="sg">Select Gender</option>
+            <select id="gender-${passengerCount}" name="gender"style="color:rgb(84, 144, 213);;width: 200px; height:25px;border-radius:20px; border:1px solid #1a4d8f;text-align:center;"  >
+                <option  selected disabled >Select Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Others">Others</option>
@@ -65,7 +66,7 @@ function savePassenger(id) {
     const berth = document.getElementById(`berth-${id}`).value;
     const gender = document.getElementById(`gender-${id}`).value;
 
-    if (!name || !age) {
+    if (!name || !age||!berth||!gender) {
         alert("Please fill all details before saving!");
         return;
     }
@@ -79,7 +80,7 @@ function savePassenger(id) {
     }
 
     localStorage.setItem("passengers", JSON.stringify(passengers));
-    alert(`Passenger ${id} saved successfully ✅`);
+    alert(`Passenger ${id} Details Saved Successfully ✅`);
 }
 
 
@@ -118,5 +119,4 @@ function confirmbooking() {
     localStorage.setItem("ticket", passengerCount);
     window.location.href = "confirmbooking.html";
 }
-
 
