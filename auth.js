@@ -110,7 +110,7 @@ function generateOTP() {
     // Generate 4-digit OTP
     generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
 
-    alert("Your OTP is: " + generatedOTP);
+    alert("Your OTP is: " + generatedOTP +"\n Please don't share your otp with anyone 🤫");
 
     // Open OTP popup
     document.getElementById("otpPopup").style.display = "block";
@@ -196,6 +196,6 @@ function showProfile(user) {
     document.getElementById("loginNav").style.display = "none";
     document.getElementById("profileNav").style.display = "block";
 
-    document.getElementById("profilename").innerText = "Hii" + user.name;
-    document.getElementById("profileusername").innerText =user.username;
+    document.getElementById("profilename").innerText = "Hii  " + user.name;
+    document.getElementById("profileusername").innerText ="User: " +user.username;
 }
