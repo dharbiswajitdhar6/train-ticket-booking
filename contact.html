@@ -37,7 +37,6 @@
             <a href="#" onclick="openPopup()">Login</a>
         </li>
 
-        <!-- PROFILE ICON (HIDDEN BY DEFAULT) -->
         <li id="profileNav" class="profile-container">
             <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="profile-icon" />
 
@@ -51,11 +50,11 @@
             </nav>
         </div>
     </header>
-     <div class="popup-bg" id="popup">
+  <div class="popup-bg" id="popup">
   <div class="popup-box">
     <h3>Login</h3>
-    <input type="text" id="loginUsername" placeholder="Enter Username"><br>
-    <input type="password" id="loginPassword" placeholder="Enter Password"><br>
+    <input type="text" id="loginUsername" placeholder="Username"><br>
+    <input type="password" id="loginPassword" placeholder="Password"><br>
     <button id="btnn" onclick="loginUser()">Login</button>
     <button id="btnn" onclick="closePopup()">Close</button><br><br>
     <button id="btnn" onclick="openPopupsignup()">Sign Up</button>
@@ -102,47 +101,53 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto;">
             
-            <div class="contact-form">
-                <h3 style="color: #1a4d8f; margin-bottom: 25px; font-size: 22px;">Send us a Message</h3>
-                
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
+            
+<div class="contact-form">
+    <h3 style="color: #1a4d8f; margin-bottom: 25px; font-size: 22px;">Send us a Message</h3>
+    
+    <div id="loginRequiredMessage" style="display: none; background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ffc107;">
+        <p style="margin-bottom: 10px;">You need to be logged in to send a message.</p>
+        <button onclick="openPopup()" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">Login Now</button>
+    </div>
+    
+    <form id="contactForm" style="display: none;">
+        <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+        </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                    </div>
+        <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        </div>
 
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}">
-                    </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}">
+        </div>
 
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select a subject</option>
-                            <option value="Booking Issue">Booking Issue</option>
-                            <option value="Technical Support">Technical Support</option>
-                            <option value="Feedback">Feedback</option>
-                            <option value="Suggestion">Suggestion</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
+        <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="Booking Issue">Booking Issue</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Suggestion">Suggestion</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
 
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
-                    </div>
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
+        </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        Send Message
-                    </button>
-                </form>
-            </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Send Message
+        </button>
+    </form>
+</div>
 
             
             <div>
