@@ -6,17 +6,22 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("myBookingsContainer");
+  
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+
   if (isLoggedIn !== "true") {
   localStorage.setItem("allBookings", JSON.stringify([]));
   }
   const allBookings = JSON.parse(localStorage.getItem("allBookings")) || [];
+
   if (allBookings.length === 0) {
     container.innerHTML = "<p>No bookings yet.</p>";
     return;
   }
-
+ 
   allBookings.reverse().forEach(booking => {
     const card = document.createElement('div');
     card.classList.add('booking-card');
@@ -47,4 +52,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 console.log(JSON.parse(localStorage.getItem("allBookings"))[3]);
-
